@@ -46,7 +46,7 @@ const Background = () => {
       <motion.div 
         className="absolute top-0 -left-1/4 w-200 h-200 rounded-full opacity-30"
         style={{
-          background: "radial-gradient(circle, rgba(139,92,246,0.4) 0%, rgba(88,28,135,0.2) 40%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(19,92,246,0.4) 0%, rgba(88,28,135,0.2) 40%, transparent 70%)",
           filter: "blur(60px)",
         }}
         animate={{
@@ -192,11 +192,11 @@ const Background = () => {
       {/* Mystical orbital rings - very slow rotation */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-225 h-225 opacity-10 pointer-events-none">
         <motion.div 
-          className="absolute inset-0 border border-purple-500/30 rounded-full"
+          className="absolute inset-0 border border-purple-500/40 rounded-full"
           animate={{ rotate: 360 }}
           transition={{ duration: 180, repeat: Infinity, ease: "linear" }}
         >
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-purple-400 rounded-full shadow-[0_0_10px_#a78bfa]" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-blue-600 rounded-full shadow-[0_0_10px_#a78bfa]" />
         </motion.div>
         <motion.div 
           className="absolute inset-20 border border-blue-500/20 rounded-full"
@@ -214,9 +214,9 @@ const Background = () => {
 
       {/* Bottom glow */}
       <div 
-        className="absolute bottom-0 left-0 right-0 h-[300px]"
+        className="absolute bottom-0 left-0 right-0 h-75"
         style={{
-          background: "linear-gradient(to top, rgba(139,92,246,0.1) 0%, transparent 100%)",
+          background: "linear-gradient(to top, rgba(9,72,246,0.1) 0%, transparent 100%)",
         }}
       />
 

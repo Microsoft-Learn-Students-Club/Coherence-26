@@ -97,7 +97,7 @@ const Home = () => {
               initial={{ opacity: 0 }} 
               animate={{ opacity: 1 }} 
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60]"
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-60"
             />
             <motion.div
               ref={menuRef}
@@ -105,13 +105,13 @@ const Home = () => {
               animate={{ x: 0 }} 
               exit={{ x: "-100%" }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="fixed top-0 left-0 h-full w-72 z-[70] p-6 shadow-2xl border-r border-purple-500/20"
+              className="fixed top-0 left-0 h-full w-72 z-70 p-6 shadow-2xl border-r border-purple-500/20"
               style={{
                 background: "linear-gradient(to bottom, rgba(26,16,61,0.95) 0%, rgba(13,13,26,0.98) 100%)",
               }}
             >
               <div className="flex justify-between items-center mb-8">
-                <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-blue-300">
+                <span className="font-bold text-transparent bg-clip-text bg-linear-to-r from-purple-300 to-blue-300">
                   Navigation
                 </span>
                 <button 
@@ -138,7 +138,7 @@ const Home = () => {
               
               {/* Decorative element in sidebar */}
               <div className="absolute bottom-8 left-6 right-6">
-                <div className="h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
+                <div className="h-px bg-linear-to-r from-transparent via-purple-500/30 to-transparent" />
                 <p className="text-center text-purple-400/40 text-xs mt-4 tracking-widest">
                   BEYOND THE ASCENSION
                 </p>
@@ -184,7 +184,7 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-purple-100 to-purple-300/80">
+            <span className="text-transparent bg-clip-text bg-linear-to-b from-white via-purple-100 to-purple-300/80">
               Beyond the
             </span>
             <br />
