@@ -5,7 +5,11 @@ import LoadingScreen from "./components/LoadingScreen";
 import About from "./components/about";
 import Contact from "./components/contact";
 import FAQs from "./components/faqs";
+import Domains from "./components/Domains.jsx";
+import GeneralGuidelines from "./components/GeneralGuildelines.jsx";
+import PrizeSection from "./components/PrizeSection.jsx";
 import ShortlistedTeams from "./pages/ShortlistedTeams";
+import Networking from "./pages/Networking";
 
 // Landing page — home + about sections
 const LandingPage = () => {
@@ -22,6 +26,9 @@ const LandingPage = () => {
       <About />
       <FAQs />
       <Contact />
+      <Domains />
+      <GeneralGuidelines />
+      <PrizeSection />
     </>
   );
 };
@@ -32,6 +39,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/shortlisted-teams" element={<ShortlistedTeams />} />
+        <Route path="/networking" element={<Networking />} />
       </Routes>
     </BrowserRouter>
   );
