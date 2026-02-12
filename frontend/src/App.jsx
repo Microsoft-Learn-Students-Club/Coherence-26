@@ -4,6 +4,7 @@ import Home from "./components/home";
 import LoadingScreen from "./components/LoadingScreen";
 import About from "./components/about";
 import ShortlistedTeams from "./pages/ShortlistedTeams";
+import Networking from "./pages/Networking";
 import AdminPanel from "./pages/AdminPanel";
 import Leaderboard from "./pages/Leaderboard";
 
@@ -30,6 +31,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/shortlisted-teams" element={<ShortlistedTeams />} />
+        <Route path="/networking" element={<Networking />} />
         <Route path="/admin" element={<AdminPanel />} />
         <Route path="/leaderboard" element={<Leaderboard />} />
       </Routes>
