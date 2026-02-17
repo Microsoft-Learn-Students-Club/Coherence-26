@@ -10,6 +10,8 @@ import GeneralGuidelines from "./components/GeneralGuildelines.jsx";
 import PrizeSection from "./components/PrizeSection.jsx";
 import ShortlistedTeams from "./pages/ShortlistedTeams";
 import Networking from "./pages/Networking";
+import Timeline from "./components/Timeline";
+import ButterflyBackground from "./components/ButterflyBackground";
 
 // Landing page — home + about sections
 const LandingPage = () => {
@@ -17,14 +19,15 @@ const LandingPage = () => {
 
   return (
     <>
-      <LoadingScreen
+      {/* <LoadingScreen
         isLoading={isLoading}
         onLoadingComplete={() => setIsLoading(false)}
         minDuration={3000}
-      />
+      /> */}
       <Home />
       <About />
       <Domains />
+      <Timeline />
       <GeneralGuidelines />
       <PrizeSection />
       <FAQs />
@@ -36,13 +39,16 @@ const LandingPage = () => {
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/shortlisted-teams" element={<ShortlistedTeams />} />
-        <Route path="/networking" element={<Networking />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <ButterflyBackground />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/shortlisted-teams" element={<ShortlistedTeams />} />
+          <Route path="/networking" element={<Networking />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 };
 
