@@ -34,7 +34,7 @@ const Networking = () => {
 
     // Fetch participants on load
     useEffect(() => {
-        fetchParticipants();
+        // fetchParticipants();
     }, []);
 
     const fetchParticipants = async () => {
