@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Background from "./background";
 
 const Home = () => {
-  const targetDate = new Date("March 28, 2026 12:00:00 GMT+0530").getTime();
+  const targetDate = new Date("March 6, 2026 8:00:00 GMT+0530").getTime();
 
   const [timeRemaining, setTimeRemaining] = useState(calculateTimeRemaining());
   const [showScrollButton, setShowScrollButton] = useState(false);
@@ -35,9 +35,16 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => setShowScrollButton(window.scrollY > 300);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      const shouldShow = window.scrollY > 300;
+      setShowScrollButton(prev => (prev !== shouldShow ? shouldShow : prev));
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   useEffect(() => {
@@ -141,19 +148,28 @@ const Home = () => {
                   About
                 </motion.a>
                 <motion.a
-                  href="#schedule"
+                  href="#domains"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.2 }}
                   className="text-left px-4 py-3 rounded-lg text-purple-200/70 hover:text-white hover:bg-purple-500/20 capitalize transition-all duration-300 border border-transparent hover:border-purple-500/30"
                 >
-                  Schedule
+                  Domains
+                </motion.a>
+                <motion.a
+                  href="#guidelines"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.3 }}
+                  className="text-left px-4 py-3 rounded-lg text-purple-200/70 hover:text-white hover:bg-purple-500/20 capitalize transition-all duration-300 border border-transparent hover:border-purple-500/30"
+                >
+                  General Guidelines
                 </motion.a>
                 <motion.a
                   href="/shortlisted-teams"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.2 }}
+                  transition={{ delay: 0.4 }}
                   className="text-left px-4 py-3 rounded-lg text-purple-200/70 hover:text-white hover:bg-purple-500/20 capitalize transition-all duration-300 border border-transparent hover:border-purple-500/30"
                 >
                   Shortlisted Teams
@@ -162,7 +178,7 @@ const Home = () => {
                   href="#faq"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.3 }}
+                  transition={{ delay: 0.5 }}
                   className="text-left px-4 py-3 rounded-lg text-purple-200/70 hover:text-white hover:bg-purple-500/20 capitalize transition-all duration-300 border border-transparent hover:border-purple-500/30"
                 >
                   FAQ
@@ -171,7 +187,7 @@ const Home = () => {
                   href="#contact"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.4 }}
+                  transition={{ delay: 0.6 }}
                   className="text-left px-4 py-3 rounded-lg text-purple-200/70 hover:text-white hover:bg-purple-500/20 capitalize transition-all duration-300 border border-transparent hover:border-purple-500/30"
                 >
                   Contact
@@ -295,7 +311,7 @@ const Home = () => {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <div
-                  className="p-4 md:p-5 rounded-xl border backdrop-blur-sm"
+                  className="min-w-[70px] md:min-w-[100px] p-4 md:p-5 rounded-xl border backdrop-blur-sm flex flex-col items-center justify-center text-center"
                   style={{
                     background: "linear-gradient(135deg, rgba(139,92,246,0.1) 0%, rgba(59,130,246,0.05) 100%)",
                     borderColor: "rgba(139,92,246,0.2)",
@@ -303,7 +319,7 @@ const Home = () => {
                   }}
                 >
                   <div
-                    className="text-3xl md:text-5xl font-mono font-bold text-white"
+                    className="text-3xl md:text-5xl font-mono font-bold text-white leading-none"
                     style={{ textShadow: "0 0 20px rgba(167,139,250,0.5)" }}
                   >
                     {String(value).padStart(2, '0')}
