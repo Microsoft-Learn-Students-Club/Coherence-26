@@ -308,7 +308,7 @@ const Home = () => {
 
 {/* Register Now Button */}
 <motion.a
-  href="https://unstop.com/hackathons/coherence-26-vidyavardhinis-college-of-engineering-and-technology-maharashtra-1641297/amp"
+  href="https://unstop.com/hackathons/coherence-26-vidyavardhinis-college-of-engineering-and-technology-maharashtra-1641297"
   target="_blank"
   rel="noopener noreferrer"
   className="mt-2 px-8 py-4 rounded-xl font-semibold text-white relative overflow-hidden group cursor-pointer inline-flex items-center gap-2"
