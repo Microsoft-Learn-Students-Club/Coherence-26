@@ -4,6 +4,7 @@ import { faAngleUp, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { motion, AnimatePresence } from "framer-motion";
 import Background from "./background";
+import HologramSphere from "./sphere";
 
 const Home = () => {
   const targetDate = new Date("March 6, 2026 8:00:00 GMT+0530").getTime();
@@ -57,15 +58,10 @@ const Home = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isMenuOpen]);
 
-  const scrollToSection = (id) => {
-    setIsMenuOpen(false);
-    const element = document.getElementById(id);
-    if (element) element.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <div id="home" className="relative min-h-screen overflow-x-hidden">
       <Background />
+      <HologramSphere />
 
       {/* Navigation Bar - Glassmorphism Style */}
       <nav className="fixed top-0 w-full z-50 bg-purple-950/30 backdrop-blur-xl border-b border-purple-500/10 px-6 py-3 flex justify-between items-center">
@@ -175,13 +171,13 @@ const Home = () => {
                   Shortlisted Teams
                 </motion.a>
                 <motion.a
-                  href="#faq"
+                  href="#faqs"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.5 }}
                   className="text-left px-4 py-3 rounded-lg text-purple-200/70 hover:text-white hover:bg-purple-500/20 capitalize transition-all duration-300 border border-transparent hover:border-purple-500/30"
                 >
-                  FAQ
+                  FAQs
                 </motion.a>
                 <motion.a
                   href="#contact"
@@ -310,7 +306,7 @@ const Home = () => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div
+                <div 
                   className="min-w-[70px] md:min-w-[100px] p-4 md:p-5 rounded-xl border backdrop-blur-sm flex flex-col items-center justify-center text-center"
                   style={{
                     background: "linear-gradient(135deg, rgba(139,92,246,0.1) 0%, rgba(59,130,246,0.05) 100%)",
@@ -318,7 +314,7 @@ const Home = () => {
                     boxShadow: "0 0 20px rgba(139,92,246,0.1), inset 0 0 20px rgba(139,92,246,0.05)",
                   }}
                 >
-                  <div
+                  <div 
                     className="text-3xl md:text-5xl font-mono font-bold text-white leading-none"
                     style={{ textShadow: "0 0 20px rgba(167,139,250,0.5)" }}
                   >
@@ -421,10 +417,11 @@ const Home = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="fixed bottom-8 right-8 p-4 rounded-full z-50 border"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="fixed bottom-8 right-8 w-14 h-14 flex items-center justify-center rounded-full z-50 border"
             style={{
-              background: "linear-gradient(135deg, rgba(139,92,246,0.3) 0%, rgba(59,130,246,0.2) 100%)",
+              background:
+                "linear-gradient(135deg, rgba(139,92,246,0.3) 0%, rgba(59,130,246,0.2) 100%)",
               borderColor: "rgba(139,92,246,0.3)",
               boxShadow: "0 0 30px rgba(139,92,246,0.3)",
               backdropFilter: "blur(10px)",
@@ -434,7 +431,7 @@ const Home = () => {
               boxShadow: "0 0 40px rgba(139,92,246,0.5)",
             }}
           >
-            <FontAwesomeIcon icon={faAngleUp} className="text-purple-200" />
+            <FontAwesomeIcon icon={faAngleUp} className="text-purple-200 text-lg" />
           </motion.button>
         )}
       </AnimatePresence>
