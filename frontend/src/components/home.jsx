@@ -7,7 +7,7 @@ import Background from "./background";
 import HologramSphere from "./sphere";
 
 const Home = () => {
-  const targetDate = new Date("March 28, 2026 12:00:00 GMT+0530").getTime();
+  const targetDate = new Date("March 6, 2026 8:00:00 GMT+0530").getTime();
 
   const [timeRemaining, setTimeRemaining] = useState(calculateTimeRemaining());
   const [showScrollButton, setShowScrollButton] = useState(false);
@@ -36,9 +36,16 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => setShowScrollButton(window.scrollY > 300);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      const shouldShow = window.scrollY > 300;
+      setShowScrollButton(prev => (prev !== shouldShow ? shouldShow : prev));
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   useEffect(() => {
@@ -137,19 +144,28 @@ const Home = () => {
                   About
                 </motion.a>
                 <motion.a
-                  href="#schedule"
+                  href="#domains"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.2 }}
                   className="text-left px-4 py-3 rounded-lg text-purple-200/70 hover:text-white hover:bg-purple-500/20 capitalize transition-all duration-300 border border-transparent hover:border-purple-500/30"
                 >
-                  Schedule
+                  Domains
+                </motion.a>
+                <motion.a
+                  href="#guidelines"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.3 }}
+                  className="text-left px-4 py-3 rounded-lg text-purple-200/70 hover:text-white hover:bg-purple-500/20 capitalize transition-all duration-300 border border-transparent hover:border-purple-500/30"
+                >
+                  General Guidelines
                 </motion.a>
                 <motion.a
                   href="/shortlisted-teams"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.2 }}
+                  transition={{ delay: 0.4 }}
                   className="text-left px-4 py-3 rounded-lg text-purple-200/70 hover:text-white hover:bg-purple-500/20 capitalize transition-all duration-300 border border-transparent hover:border-purple-500/30"
                 >
                   Shortlisted Teams
@@ -158,7 +174,7 @@ const Home = () => {
                   href="#faqs"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.3 }}
+                  transition={{ delay: 0.5 }}
                   className="text-left px-4 py-3 rounded-lg text-purple-200/70 hover:text-white hover:bg-purple-500/20 capitalize transition-all duration-300 border border-transparent hover:border-purple-500/30"
                 >
                   FAQs
@@ -167,7 +183,7 @@ const Home = () => {
                   href="#contact"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.4 }}
+                  transition={{ delay: 0.6 }}
                   className="text-left px-4 py-3 rounded-lg text-purple-200/70 hover:text-white hover:bg-purple-500/20 capitalize transition-all duration-300 border border-transparent hover:border-purple-500/30"
                 >
                   Contact
