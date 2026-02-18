@@ -86,7 +86,7 @@ const Contact = () => {
                   />
                 </div>
                 <span className="text-gray-300">
-                  Amey Chaudhari: +91 96534 92872
+                  Parth Raut: +91 92246 68114
                 </span>
               </div>
 
@@ -98,7 +98,7 @@ const Contact = () => {
                   />
                 </div>
                 <span className="text-gray-300">
-                  Shreya Wankhede: +91 96195 08298
+                  Dnyanesh Panchal: +91 93216 67147
                 </span>
               </div>
 
@@ -110,7 +110,7 @@ const Contact = () => {
                   />
                 </div>
                 <span className="text-gray-300">
-                  Shagun Upadhyay: +91 96193 42859
+                  Gayatri Sabat : +91 98907 40720
                 </span>
               </div>
             </div>
